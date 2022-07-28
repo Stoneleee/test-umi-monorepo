@@ -1,17 +1,23 @@
 import { defineConfig } from 'umi';
+import path from 'path';
 
 export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
-    exclude: ['ui']
+    // exclude: ['ui'],
   },
-  extraBabelIncludes: ['ui'],
-  routes: [
-    { path: '/', component: '@/pages/index' },
-  ],
+  // extraBabelIncludes: ['ui'],
+  routes: [{ path: '/', component: '@/pages/index' }],
   fastRefresh: {},
-  chainWebpack: (config) => {
-    // 编译bl-ui包
-    config.module.rule('ts').include.add(/node_modules\/ui/);
+  chainWebpack: (config, { webpack }) => {
+    // console.log('webpack', webpack);
+    // console.log('=======', require.resolve('ui'));
+    // 编译ui包
+    config.module
+      .rule('js')
+      .include.add(path.resolve(__dirname, '../../packages/ui'))
+      .end();
+
+    // console.log(config.toString());
   },
 });

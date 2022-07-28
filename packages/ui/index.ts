@@ -1,1 +1,1 @@
-export { CustomerButton } from './src/CustomerButton';
+export * from "./src";
