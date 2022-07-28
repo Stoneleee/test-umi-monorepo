@@ -11,23 +11,5 @@
     "baseUrl": "./",
     "strict": true,
     "allowSyntheticDefaultImports": true
-  },
-  "include": [
-    "mock/**/*",
-    "src/**/*",
-    "config/**/*",
-    ".umirc.ts",
-    "typings.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib",
-    "es",
-    "dist",
-    "typings",
-    "**/__test__",
-    "test",
-    "docs",
-    "tests"
-  ]
+  }
 }
