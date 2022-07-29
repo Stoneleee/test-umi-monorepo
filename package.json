@@ -1,5 +1,9 @@
 {
-  "scripts": {
-    "start": "pnpm run start --filter=demo"
-  }
+    "engines": {
+        "node": ">=16",
+        "pnpm": ">=7"
+    },
+    "scripts": {
+        "start": "pnpm start --filter=demo"
+    }
 }
